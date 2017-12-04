@@ -40,6 +40,9 @@ class php::globals (
 
   $globals_php_version = pick($php_version, $default_php_version)
 
+  notify {'global php version--> ${globals_php_version}': }
+  
+
   case $::osfamily {
     'Debian': {
       if $::operatingsystem == 'Ubuntu' {
@@ -127,6 +130,9 @@ class php::globals (
   }
 
   $globals_config_root = pick($config_root, $default_config_root)
+  notify {'global php globals_config_root--> ${globals_config_root}': }
 
   $globals_fpm_pid_file = pick($fpm_pid_file, $default_fpm_pid_file)
+ 
+  notify {'global php globals_fpm_pid_file--> ${globals_fpm_pid_file}': }
 }
