@@ -62,9 +62,11 @@ class php::fpm (
     warning('php::fpm is private')
   }
 
-  notify { 'Print vars': }
+  notify{ 'Print vars': }
+
 
   notify { "Printing inifile variable--> ${inifile}": }
+
 
   notify { 'End of print vars': }
 
